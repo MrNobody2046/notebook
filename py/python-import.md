@@ -7,20 +7,21 @@
  - 如果modz同时要用系统的urllib2的时候，这时候应该怎么做？（当然可以改名，这里不讨论改名的情况）
  - 因为一些原因sub_ppk.modx中需要用到subppk.modz中的东西，如何引入modz比较便于阅读和修改？
 
+---
 
+    ├── pkg
+    │   ├── \__init__.py
+    │   ├── mod.py
+    │   ├── sub_ppk
+    │   │   ├── \__init__.py
+    │   │   ├── modx.py
+    │   │   ├── urllib.py
+    │   └── sub_ppk_2
+    │          ├── \__init__.py
+    │          └── modz.py
+    └── main.py
 
-> ├── pkg
-│   ├── \__init__.py
-│   ├── mod.py
-│   ├── sub_ppk
-│   │   ├── \__init__.py
-│   │   ├── modx.py
-│   │   ├── urllib.py
-│   └── sub_ppk_2
-│          ├── \__init__.py
-│          └── modz.py
-└── main.py
-
+---
 modx.py
 
     from __future__ import absolute_import
