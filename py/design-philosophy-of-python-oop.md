@@ -1,11 +1,9 @@
-
-
 # Python 面向对象设计哲学
 
 
 ###中心思想
  1. 万物皆对象
- 2. 神说要有type于是有type，而后有了万物
+ 2. 神说要有type于是有type，而后type生出classobj和万物（classobj是旧式类的type O(∩_∩)O~~）
 
 
 ###什么是type?
@@ -16,7 +14,7 @@ type是class的抽象，type实例化之后变成class，class实例化之后变
 
 
 
-未完待续- - 
+
 
 
    
