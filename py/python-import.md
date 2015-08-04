@@ -10,14 +10,14 @@
 ---
 
     ├── pkg
-    │   ├── \__init__.py
+    │   ├── __init__.py
     │   ├── mod.py
     │   ├── sub_ppk
-    │   │   ├── \__init__.py
+    │   │   ├── __init__.py
     │   │   ├── modx.py
     │   │   ├── urllib.py
     │   └── sub_ppk_2
-    │          ├── \__init__.py
+    │          ├── __init__.py
     │          └── modz.py
     └── main.py
 
