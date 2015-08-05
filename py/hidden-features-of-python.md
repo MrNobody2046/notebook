@@ -137,7 +137,7 @@ def add_box(x, box=Box):
 
 通过描述符可以实现类属性的权限控制，详细请看参考[Python 描述符简介]
 
-###字典默认值， \__missing__ 函数
+###**字典默认值** 与 **\__missing__ **函数
 当你从某个字典中get 键值的时候，给get方法传入第二个参数，这个参数作为key不存在时候的默认值：
 ```
 count = {}
@@ -246,29 +246,55 @@ lazy_new_a = (range(i) for i in a) # generator
 
 这是一个省内存的技巧，实施起来也只要把方括号变为括弧就可以。
 
+###字典推导
+2.7之后版本可以使用
+```
+{index:value for index,value in enumerate(range(10))}
+
+```
+2.6
+```
+dict([(k,v) for k,v in something])
+
+```
+
 ###多重赋值
 
 ```
 s = 1,2,3 # tuple
 a,b,c = s
 ```
-利用这种特性，可以inplace swap
+利用unpack/pack这种特性，可以inplace swap
 ```
 a = 1
 b = 2
 a, b = b, a
 ```
-深入一点你几乎可以乱玩，但是似乎也没有太多用
+深入一点你可以
 ```
 a,b,c,d = range(4)
 #甚至iterator也可以
 a,b,c,d = xrange(4)
-#generator也没问题哦
+#当然generator也没问题
 a,b,c,d = (i for i in range(4))
 
+```
+###String Named Format
 
 ```
+#形式1
+"select %(field)s from %(table)s limit %(limit)i" % dict(field="name",table="product", limit=1)
 
+#形式2 该形式不检查格式对象的类型，统一调用str函数
+
+"select {field}  from {table} limit {limit}".format(field="name",table="product", limit=1)
+
+#扩展
+
+def select(field,table,limit):
+    return "select {field}  from {table} limit {limit}".format(**locals())
+
+```
 
 
   [p3k里的特性]: https://www.python.org/dev/peps/pep-0401/
