@@ -9,9 +9,9 @@
 ###什么是type?
 ```
 >>>print type
->>><type 'type'>
+<type 'type'>
 >>>type(type)
->>>type
+type
 ```
 上面可以看出type就是type，type是class的抽象，调用type对象将生成class，class调用(实例化)成为instance
 
