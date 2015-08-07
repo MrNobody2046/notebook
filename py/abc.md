@@ -18,14 +18,22 @@ abstractproperty（继承自property）
 
 #### Interface实现
 
-当你在抽象类中定义了一些方法，你希望子类来实现的时候，你可能需要这样做，如果子类不实现该方法，上溯到父类（抽象类）中就会报错，但是这样做的问题是，生成instance的时候并不会抛出这个异常，直到你运行到某个忘记实现的方法的时候才会报错。所以使用abc
+当你在抽象类中定义了一些方法，你希望子类来实现的时候，你可能需要这样做
 
 ```
 class Shape(object):
     def draw(self):
         raise NotImplementedError("Should have implemented this")
+        
+        
+class Round(Shape):
+  pass
+  
+rr = Round() # should rasie excpetion at here
+rr.draw() # raise exception here
 ```
-通过装饰器+metaclass来实现，在实例化的时候就会抛出一个异常，避免了上面的情况发生
+
+如果子类不实现该方法，上溯到父类（抽象类）中就会报错，但是这样做的问题是，生成instance的时候并不会抛出这个异常，直到你运行到某个忘记实现的方法的时候才会报错。abc模块很好的解决了这个问题
 ```
 import abc
 
