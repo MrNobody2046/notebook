@@ -297,6 +297,23 @@ def select(field,table,limit):
 ```
 
 
+###Exception else clause
+
+```
+try:
+    1/0
+except:
+    print "raise exception here"
+else:
+    print "do something if no exception"
+finally:
+    print "always do something here"
+
+```
+
+###
+
+
   [p3k里的特性]: https://www.python.org/dev/peps/pep-0401/
   [python新式类的介绍]:http://www.kaka-ace.com/python2_new-style-and-classic-classes/
   [Python 描述符简介]:http://www.ibm.com/developerworks/cn/opensource/os-pythondescriptors/
